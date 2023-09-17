@@ -34,9 +34,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-  <script type="text/javascript" id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js">
-  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -191,16 +189,16 @@
 
         <div class="column is-7">
           <h2 class="title is-3">Method</h2>
-          <img src="./static/images/main.pdf" class="interpolation-image" alt="Interpolate start reference image." />
+          <img src="./static/images/main.png" class="interpolation-image" alt="Interpolate start reference image." />
           <div class="content has-text-justified" style="font-size:20px;">
             MasQCLIP consists of a class-agnostic mask proposal network and a mask classification module based on CLIP.
             In the mask proposal network, we apply <b><i>progressive distillation</i></b> to segment masks beyond base classes.
             After we obtain an open-world mask proposal network, the predicted masks are then sent to the classification
             module to obtain labels.
             To efficiently utilize the dense CLIP features, we propose </b><i>MasQ-Tuning</i></b>.
-            We set new query projections \( f_{Q}^{\prime} \) for the Mask Class Tokens to obtain optimal attention
+            We set new query projections \(f_{Q}^{\prime}\) for the Mask Class Tokens to obtain optimal attention
             weights,
-            and \( f_Q^\prime \) at each layer are the only learnable parameters.
+            and \(f_Q^\prime\) at each layer are the only learnable parameters.
           </div>
         </div>
       </div>
