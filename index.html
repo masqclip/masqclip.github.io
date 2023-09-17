@@ -34,10 +34,9 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js">
-    </script>
+  </script>
 </head>
 
 <body>
@@ -172,9 +171,9 @@
                 circumventing the need for extensive parameter training. 
               </p>
               <p>
-                MasQCLIP emphasizes two new aspects when building an image segmentation method with a CLIP model: (1) a student-teacher module to deal with masks
-                of the novel (unseen) classes by distilling information from the base (seen) classes; (2) a fine-tuning
-                process to update model parameters for the queries $$Q$$ within the CLIP model. Thanks to these two simple
+                MasQCLIP emphasizes two new aspects when building an image segmentation method with a CLIP model: 
+                (1) a student-teacher module to deal with masks of the novel (unseen) classes by distilling information from the base (seen) classes; (2) a fine-tuning
+                process to update model parameters for the queries \(Q\) within the CLIP model. Thanks to these two simple
                 and intuitive designs, MasQCLIP is able to achieve state-of-the-art performances with a substantial gain
                 over the competing methods by a large margin across all three tasks, including open-vocabulary instance,
                 semantic, and panoptic segmentation.
@@ -195,13 +194,13 @@
           <img src="./static/images/main.pdf" class="interpolation-image" alt="Interpolate start reference image." />
           <div class="content has-text-justified" style="font-size:20px;">
             MasQCLIP consists of a class-agnostic mask proposal network and a mask classification module based on CLIP.
-            In the mask proposal network, we apply <i>progressive distillation</i> to segment masks beyond base classes.
+            In the mask proposal network, we apply <b><i>progressive distillation</i></b> to segment masks beyond base classes.
             After we obtain an open-world mask proposal network, the predicted masks are then sent to the classification
             module to obtain labels.
-            To efficiently utilize the dense CLIP features, we propose <i>MasQ-Tuning</i>.
-            We set new query projections $$ f_{Q}^{\prime} $$ for the Mask Class Tokens to obtain optimal attention
+            To efficiently utilize the dense CLIP features, we propose </b><i>MasQ-Tuning</i></b>.
+            We set new query projections \( f_{Q}^{\prime} \) for the Mask Class Tokens to obtain optimal attention
             weights,
-            and $$ f_Q^\prime $$ at each layer are the only learnable parameters.
+            and \( f_Q^\prime \) at each layer are the only learnable parameters.
           </div>
         </div>
       </div>
