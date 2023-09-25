@@ -183,7 +183,7 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-11">
             <h2 class="title is-3">Abstract</h2>
-            <hr>
+            <!-- <hr> -->
             <div class="content has-text-justified" style="font-size:20px;">
               <p>
                 We present a new method for open-vocabulary universal image segmentation, which is capable of performing
@@ -245,7 +245,7 @@
           <h3 class="title is-4">MasQ-Tuning</h3>
           <div class="columns is-centered">
             <div class="column content">
-              <p style="font-size:17px;">
+              <p style="font-size:19px;">
                 To enhance adaptation from image classification to mask classification while maintaining the generalization ability of CLIP, we apply new query projections \(f_Q^\prime\) to each cross-attention layer for Mask Class Tokens, i.e.              
               </p>
               <p>
@@ -269,11 +269,14 @@
     <div class="columns is-centered has-text-centered">
     <div class="column is-7">
       <h2 class="title is-3">Qualitative Results</h2>
+      <hr>
       <!-- <div class="content has-text-justified" style="font-size:20px;">
         With a unified framework, MasQCLIP achieves substantial performance gain across all three open-vocabulary segmentation tasks.
       </div> -->
-      <p style="font-size: 24px; font-weight: bold;">Semantic Segmentation</p>
+      <p class="title is-5">Semantic Segmentation</p>
       <img src="./static/images/sem_seg_vis.png" />
+      <p class="title is-5">Instance Segmentation</p>
+      <img src="./static/images/ins_seg_vis.png" />
     </div>
     </div>
   </div>
