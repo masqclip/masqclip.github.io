@@ -210,17 +210,19 @@
         </div>
       </div>
       <div class="container is-max-desktop">
+
+      <hr>
   
       <div class="columns is-centered">
   
         <div class="column">
           <div class="content">
-            <h2 class="title is-3">Progressive Distillation</h2>
-            <p>
+            <h3 class="title is-4">Progressive Distillation</h3>
+            <!-- <p  style="font-size:16px;">
               By utilizing the object score as an indicator of mask quality, 
               we can filter high-quality mask proposals that do not overlap with mask annotations of base categories, 
               thus producing extra annotations for training.
-            </p>
+            </p> -->
             <img src="./static/images/progressive-distillation.png" class="interpolation-image" alt="Interpolate start reference image." />
           </div>
         </div>
@@ -229,11 +231,8 @@
           <h3 class="title is-4">MasQ-Tuning</h3>
           <div class="columns is-centered">
             <div class="column content">
-              <p>
-                To enhance adaptation from image classification to mask classification, we apply new query projections \(f_Q′\) to each cross-attention layer for Mask Class Tokens, i.e.
-
-                $$\text{CrossAttn}(\cdot) = \text{softmax}(\mathbf{Q}_{\text{mask}}^\prime K_{\text{img}}^T + \mathcal{M}_{\text{mask}}) \cdot V_{\text{img}}$$
-                
+              <p style="font-size:16px;">
+                To enhance adaptation from image classification to mask classification, we apply new query projections \(f_Q \prime\) to each cross-attention layer for Mask Class Tokens, i.e.              
               </p>
               <p>
                 $$\text{CrossAttn}(\cdot) = \text{softmax}(\mathbf{Q}_{\text{mask}}^\prime K_{\text{img}}^T + \mathcal{M}_{\text{mask}}) \cdot V_{\text{img}}$$
