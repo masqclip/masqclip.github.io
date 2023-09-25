@@ -84,21 +84,21 @@
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                  <a href="./static/files/MasQCLIP_ICCV_2023.pdf" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
                     <span>Paper</span>
                   </a>
                 </span>
-                <span class="link-block">
-                  <a href="./static/files/MasQCLIP_ICCV_2023.pdf" class="external-link button is-normal is-rounded is-dark">
+                <!-- <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
                   </a>
-                </span>
+                </span> -->
                 <span class="link-block">
                   <a href="./static/files/poster_iccv2023_masqclip_latest.pdf" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -205,31 +205,44 @@
             module to obtain labels.
             To efficiently utilize the dense CLIP features, we propose <b><i>MasQ-Tuning</i></b>.
             We set new query projections \(f_{Q}^{\prime}\) for the Mask Class Tokens to obtain optimal attention
-            weights,
-            and \(f_Q^\prime\) at each layer are the only learnable parameters.
+            weights, and \(f_Q^\prime\) at each layer are the only learnable parameters.
           </div>
         </div>
-        <hr/>
-        <div class="column is-7">
-          <h3 class="title is-3">Progressive Distillation</h3>
-          <!-- <img src="./static/images/main.png" class="interpolation-image" alt="Interpolate start reference image." /> -->
-          <div class="content has-text-justified" style="font-size:20px;">
-            MasQCLIP consists of a class-agnostic mask proposal network and a mask classification module based on CLIP.
+      </div>
+      <div class="container is-max-desktop">
+  
+      <div class="columns is-centered">
+  
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Progressive Distillation</h2>
+            <p>
+              By utilizing the object score as an indicator of mask quality, 
+              we can filter high-quality mask proposals that do not overlap with mask annotations of base categories, 
+              thus producing extra annotations for training.
+            </p>
+            <img src="./static/images/progressive-distillation.png" class="interpolation-image" alt="Interpolate start reference image." />
           </div>
         </div>
-        <hr/>
-        <div class="column is-7">
-          <h3 class="title is-3">MasQ-Tuning</h3>
-          <!-- <img src="./static/images/main.png" class="interpolation-image" alt="Interpolate start reference image." /> -->
-          <div class="content has-text-justified" style="font-size:20px;">
-            MasQCLIP consists of a class-agnostic mask proposal network and a mask classification module based on CLIP.
-            In the mask proposal network, we apply <b><i>progressive distillation</i></b> to segment masks beyond base classes.
-            After we obtain an open-world mask proposal network, the predicted masks are then sent to the classification
-            module to obtain labels.
-            To efficiently utilize the dense CLIP features, we propose <b><i>MasQ-Tuning</i></b>.
-            We set new query projections \(f_{Q}^{\prime}\) for the Mask Class Tokens to obtain optimal attention
-            weights,
-            and \(f_Q^\prime\) at each layer are the only learnable parameters.
+  
+        <div class="column">
+          <h3 class="title is-4">MasQ-Tuning</h3>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+                To enhance adaptation from image classification to mask classification, we apply new query projections \(f_Q′\) to each cross-attention layer for Mask Class Tokens, i.e.
+
+                $$\text{CrossAttn}(\cdot) = \text{softmax}(\mathbf{Q}_{\text{mask}}^\prime K_{\text{img}}^T + \mathcal{M}_{\text{mask}}) \cdot V_{\text{img}}$$
+                
+              </p>
+              <p>
+                $$\text{CrossAttn}(\cdot) = \text{softmax}(\mathbf{Q}_{\text{mask}}^\prime K_{\text{img}}^T + \mathcal{M}_{\text{mask}}) \cdot V_{\text{img}}$$
+              </p>
+              <p>
+                \mathbf{Q}_{\text{mask}}^\prime, K_{\text{img}}, V_{\text{img}} = \mathbf{f_Q^\prime}(x_\text{mask}), f_K(x_\text{img}), f_V(x_\text{img}).$$
+              </p>
+            </div>
+  
           </div>
         </div>
       </div>
@@ -243,6 +256,9 @@
     <div class="columns is-centered has-text-centered">
     <div class="column is-7">
       <h2 class="title is-3">Main Results</h2>
+      <!-- <div class="content has-text-justified" style="font-size:20px;">
+        With a unified framework, MasQCLIP achieves substantial performance gain across all three open-vocabulary segmentation tasks.
+      </div> -->
       <img src="./static/images/teaser.png" />
     </div>
     </div>
