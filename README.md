@@ -1,3 +1,3 @@
 # masqclip.github.io
 
-code coming soon ...
+The project page for ICCV 2023 paper: *MasQCLIP for Open-Vocabulary Universal Image Segmentation*.
